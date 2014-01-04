@@ -24,7 +24,11 @@ SOURCES += main.cpp \
     PlayOrPauseButton.cpp \
     NextButton.cpp \
     SeekSlider.cpp \
-    VolumeSlider.cpp
+    VolumeSlider.cpp \
+    TabButton.cpp \
+    DramaTree.cpp \
+    StackWidget.cpp \
+    PageWidget.cpp
 
 HEADERS  += \
     MediaListCtrl.h \
@@ -39,7 +43,11 @@ HEADERS  += \
     PlayOrPauseButton.h \
     NextButton.h \
     SeekSlider.h \
-    VolumeSlider.h
+    VolumeSlider.h \
+    TabButton.h \
+    DramaTree.h \
+    StackWidget.h \
+    PageWidget.h
 
 FORMS    +=
 

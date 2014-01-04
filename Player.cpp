@@ -47,6 +47,9 @@ void Player::Init()
 
 //    m_VolumeSlider->move(180, 80);
 //    m_SeekSlider->move(5, 110);
+
+    m_pPageWgt = new PageWidget(this);
+    m_pPageWgt->move(5, 150);
 }
 
 void Player::paintEvent(QPaintEvent *)

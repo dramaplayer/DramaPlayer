@@ -17,6 +17,8 @@
 #include "SeekSlider.h"
 #include "VolumeSlider.h"
 
+#include "PageWidget.h"
+
 class Player : public QWidget
 {
     Q_OBJECT
@@ -54,6 +56,8 @@ private:
 
     SeekSlider *m_pSeekSlider;
     VolumeSlider *m_pVolSlider;
+
+    PageWidget *m_pPageWgt;
 };
 
 #endif // PLAYER_H

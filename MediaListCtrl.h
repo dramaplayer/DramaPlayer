@@ -18,9 +18,9 @@ public:
 public:
     static bool InitMediaList();
 
-    QList<DramaListInfo> GetDramaList();
+    QList<DramaListInfo> GetDramaLists();
 
-    QList<MusicListInfo> GetMusicList();
+    QList<MusicListInfo> GetMusicLists();
 
     bool InsertDramaList(const DramaListInfo &dramaList);
 
@@ -45,6 +45,8 @@ public:
     bool UpdateDramaSource(const QUuid &id, const DramaSourceInfo &dramaSource);
 
     bool UpdateMusicSource(const QUuid &id, const MusicSourceInfo &musicSource);
+
+    bool UpdateDramaListName(const QUuid &id, const QString &newName);
 private:
     static MediaListCtrl* m_pMediaLstCtrl;
     static QSqlDatabase m_Db;

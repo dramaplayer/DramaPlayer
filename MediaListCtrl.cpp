@@ -60,6 +60,7 @@ bool MediaListCtrl::InitMediaList()
                 query.exec("create table drama_source(id varchar primary key, db_id varchar, list_id varchar, name varchar, path varchar)");
                 query.exec("create table music_list(id varchar primary key, db_id varchar, name varchar)");
                 query.exec("create table music_source(id varchar primary key, db_id varchar, list_id varchar, name varchar, path varchar)");
+
             }
         }
 
@@ -71,21 +72,31 @@ bool MediaListCtrl::InitMediaList()
     return false;
 }
 
-QList<DramaListInfo> MediaListCtrl::GetDramaList()
+QList<DramaListInfo> MediaListCtrl::GetDramaLists()
 {
-    QList<DramaListInfo> dramaLst;
+    QList<DramaListInfo> dramaLsts;
 
     if(m_Db.open())
     {
-
+        QSqlQuery query;
+        QString sql = QString("select * from drama_list");
+        query.exec(sql);
+        while(query.next())
+        {
+            DramaListInfo lst;
+            lst.m_Id = query.value("id").toString();
+            lst.m_DbId = query.value("db_id").toString();
+            lst.m_Name = query.value("name").toString();
+            dramaLsts << lst;
+        }
 
         m_Db.close();
     }
 
-    return dramaLst;
+    return dramaLsts;
 }
 
-QList<MusicListInfo> MediaListCtrl::GetMusicList()
+QList<MusicListInfo> MediaListCtrl::GetMusicLists()
 {
     QList<MusicListInfo> musicLst;
 
@@ -103,8 +114,13 @@ bool MediaListCtrl::InsertDramaList(const DramaListInfo &dramaList)
 {
     if(m_Db.open())
     {
-
-
+        QSqlQuery query;
+        QString sql = QString("insert into drama_list values('%1', '%2', '%3')")
+                .arg(dramaList.m_Id.toString())
+                .arg(dramaList.m_DbId.toString())
+                .arg(dramaList.m_Name);
+        query.exec(sql);
+qDebug()<<"Insert dramaList";
         m_Db.close();
         return true;
     }
@@ -155,8 +171,10 @@ bool MediaListCtrl::DeleteDramaList(const QUuid &id)
 {
     if(m_Db.open())
     {
-
-
+        QSqlQuery query;
+        QString sql = QString("delete from drama_list where id = '%1'").arg(id.toString());
+        query.exec(sql);
+qDebug()<<sql;
         m_Db.close();
         return true;
     }
@@ -247,6 +265,23 @@ bool MediaListCtrl::UpdateMusicSource(const QUuid &id, const MusicSourceInfo &mu
     if(m_Db.open())
     {
 
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::UpdateDramaListName(const QUuid &id, const QString &newName)
+{
+    if(m_Db.open())
+    {
+        QSqlQuery query;
+        QString sql = QString("update drama_list set name = '%1' where id = '%2'")
+                .arg(newName)
+                .arg(id.toString());
+        query.exec(sql);
 
         m_Db.close();
         return true;
