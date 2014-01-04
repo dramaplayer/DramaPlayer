@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,9 +12,12 @@ TARGET = DramaPlayer
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    MediaListCtrl.cpp
 
-HEADERS  +=
+HEADERS  += \
+    MediaListCtrl.h \
+    MediaBaiscInfo.h
 
 FORMS    +=
 
