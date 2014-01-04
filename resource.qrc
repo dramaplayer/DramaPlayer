@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/yue.png</file>
+        <file>image/yu.png</file>
+        <file>image/tan.png</file>
+        <file>image/skin.png</file>
+        <file>image/qu.png</file>
+        <file>image/previouse.png</file>
+        <file>image/portrait.jpg</file>
+        <file>image/play.png</file>
+        <file>image/pause.png</file>
+        <file>image/next.png</file>
+        <file>image/minimize.png</file>
+        <file>image/ju.png</file>
+        <file>image/FT.png</file>
+        <file>image/fan.png</file>
+        <file>image/drama.png</file>
+        <file>image/close.png</file>
+        <file>image/background.jpg</file>
+        <file>image/volume.png</file>
+        <file>image/volume_mute.png</file>
+    </qresource>
+</RCC>

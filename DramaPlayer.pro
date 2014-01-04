@@ -13,14 +13,39 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    MediaListCtrl.cpp
+    MediaListCtrl.cpp \
+    DramaPlayer.cpp \
+    Player.cpp \
+    Button.cpp \
+    CloseButton.cpp \
+    MinimizeButton.cpp \
+    PortraitButton.cpp \
+    PreviouseButton.cpp \
+    PlayOrPauseButton.cpp \
+    NextButton.cpp \
+    SeekSlider.cpp \
+    VolumeSlider.cpp
 
 HEADERS  += \
     MediaListCtrl.h \
-    MediaBaiscInfo.h
+    MediaBaiscInfo.h \
+    DramaPlayer.h \
+    Player.h \
+    Button.h \
+    CloseButton.h \
+    MinimizeButton.h \
+    PortraitButton.h \
+    PreviouseButton.h \
+    PlayOrPauseButton.h \
+    NextButton.h \
+    SeekSlider.h \
+    VolumeSlider.h
 
 FORMS    +=
 
 CONFIG += mobility
 MOBILITY = 
+
+RESOURCES += \
+    resource.qrc
 

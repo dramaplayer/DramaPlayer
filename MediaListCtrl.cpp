@@ -70,3 +70,187 @@ bool MediaListCtrl::InitMediaList()
 
     return false;
 }
+
+QList<DramaListInfo> MediaListCtrl::GetDramaList()
+{
+    QList<DramaListInfo> dramaLst;
+
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+    }
+
+    return dramaLst;
+}
+
+QList<MusicListInfo> MediaListCtrl::GetMusicList()
+{
+    QList<MusicListInfo> musicLst;
+
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+    }
+
+    return musicLst;
+}
+
+bool MediaListCtrl::InsertDramaList(const DramaListInfo &dramaList)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::InsertMusicList(const MusicListInfo &musicList)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::InsertDramaSource(const DramaSourceInfo &dramaSource)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::InsertMusicSource(const MusicSourceInfo &musicSource)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::DeleteDramaList(const QUuid &id)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::DeleteMusicList(const QUuid &id)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::DeleteDramaSource(const QUuid &id)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::DeleteMusicSource(const QUuid &id)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::UpdateDramaList(const QUuid &id, const DramaListInfo &dramaList)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::UpdateMusicList(const QUuid &id, const MusicListInfo &musicList)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::UpdateDramaSource(const QUuid &id, const DramaSourceInfo &dramaSource)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
+
+bool MediaListCtrl::UpdateMusicSource(const QUuid &id, const MusicSourceInfo &musicSource)
+{
+    if(m_Db.open())
+    {
+
+
+        m_Db.close();
+        return true;
+    }
+
+    return false;
+}
